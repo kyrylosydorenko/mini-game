@@ -1,0 +1,46 @@
+.card {
+  width: calc(var(--card-size, 1px) * 100);
+  height: calc(var(--card-size, 1px) * 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3rem;
+  user-select: none;
+  font-size: calc(var(--card-size, 1%) * 30);
+}
+
+.card:focus {
+  outline: none;
+}
+.card::-moz-focus-inner {
+  border: 0;
+}
+
+
+/* Animation*/
+/* starting ENTER animation */
+.card-transition-enter {
+  opacity: 0.01;
+  transform: translateY(0%) scale(0.01);
+}
+
+/* ending ENTER animation */
+.card-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0%) scale(1);
+  transition: all 400ms ease-in-out;
+}
+
+/* starting EXIT animation */
+.card-transition-exit {
+  opacity: 1;
+  transform: scale(1.01);
+  /* transition: color 0s; */
+}
+
+/* ending EXIT animation */
+.card-transition-exit-active {
+  opacity: 0;
+  transform: scale(0.01);
+  transition: all 400ms ease-in-out;
+}
